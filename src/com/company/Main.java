@@ -20,7 +20,7 @@ public class Main
             System.out.print("Input col: ");
             int cl = kb.nextInt();
 
-            bd.setBoard(rw, cl, XorO);
+            boolean validMove = bd.setBoard(rw, cl, XorO);
 
             bd.printBoard();
 
@@ -29,12 +29,14 @@ public class Main
                 break;
         }
 
-            if(XorO.equals("x")){
-                XorO="o";
-            }
-            else {
+        if(validMove) {
+            if (XorO.equals("x")) {
+                XorO = "o";
+            } else {
                 XorO = "x";
             }
         }
+        }
+        System.out.println("You tied :/");
     }
 }

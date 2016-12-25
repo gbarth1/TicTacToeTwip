@@ -30,13 +30,15 @@ public class board
         System.out.println();
     }
 
-    public void setBoard(int row, int col, String c) {
+    public boolean setBoard(int row, int col, String c) {
 
-        if (array[row][col].equals(0)){
+        if (array[row][col].equals("0")){
             array [row][col]=c;
+            return true;
         }
         else{
             System.out.println("Sorry this spot is already taken");
+            return false;
         }
     }
 
